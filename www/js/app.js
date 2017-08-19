@@ -23,8 +23,7 @@ angular.module('starter', ['ionic','ngCordova','ionic.contrib.ui.cards'])
   });
 })
 
-
-  .directive('noScroll', function($document) {
+.directive('noScroll', function($document) {
 
   return {
     restrict: 'A',
@@ -37,49 +36,39 @@ angular.module('starter', ['ionic','ngCordova','ionic.contrib.ui.cards'])
   }
 })
 
-  .controller('CardsCtrl', function($scope, $http, $ionicSwipeCardDelegate) {
-  $scope.cards = [];
-  $scope.q=[];
- 
-  $scope.fb=function(){
-    $scope.request = $http({
-            method: "get",
-            url: "http://localhost:3000/api/admin/saloonlist"
-          }).success(function (data2) {
-            $scope.data2 = JSON.stringify(data2.success)
-            console.log($scope.data2)
-            localStorage.setItem('data',$scope.data2)
-        });
+.controller('cntrl', function($scope, $http, $ionicSwipeCardDelegate) {
+$scope.cards = [
+ "a","b","c"
+];
+$scope.swipe=function(){
+  return swipe-card;
+}
+$scope.q=[];
+$scope.a=function(a){
+  console.log(a)
+  if(a==0){
+    $scope.cards=[ "a","b","c"];
+    
   }
+  else{
+$scope.cards.splice(a);
+  console.log($scope.cards)
 
- 
-  $scope.addCards = function(count) {
-   var a=JSON.parse(localStorage.getItem('data'))
-   var b=a.length;
-   console.log(b)
-      for (var i = 0; i < (a.length); i++) {
-        $scope.cards.push(a[i]);
-      };
-      console.log($scope.q)
-      $scope.showCards = true;
+  }
+  $scope.class="animate-enter";
+}
+$scope.b=function(a){
+  if(a==0){
+    $scope.cards=[ "a","b","c"];
    
-  };
- 
-  $scope.addCards(1);
- 
-  /*$scope.cardSwiped = function(index) {
-    $scope.addCards(1);
-  };*/
- 
-  /*$scope.cardDestroyed = function(index) {
-    $scope.cards.splice(index, 1);
-  };*/
- 
-})
+  }
+  else{
+  $scope.cards.splice(a);
+  console.log($scope.cards)
 
-  .controller('CardCtrl', function($scope, $ionicSwipeCardDelegate) {
-  $scope.doAnything = function() {
-    var card = $ionicSwipeCardDelegate.getSwipeableCard($scope);
-    card.swipe();
-  };
-})
+  }
+}
+$scope.cardDestroyed = function(index) {
+  //$scope.cards.push($scope.cards);
+};
+});

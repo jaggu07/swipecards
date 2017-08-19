@@ -1,7 +1,7 @@
 {
-  "name": "swipecards",
+  "name": "swipe",
   "version": "1.1.1",
-  "description": "swipecards: An Ionic project",
+  "description": "swipe: An Ionic project",
   "devDependencies": {
     "gulp": "^3.5.6",
     "gulp-clean-css": "^3.7.0",

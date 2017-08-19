@@ -1,61 +1,48 @@
+/* Empty. Add your own CSS if you like */
+
 .pane {
   background-color: #333;
 }
- 
-.swipe-cards {
-  position: fixed;
-}
- 
-swipe-card {
-  display: none;
-  position: fixed;
-  -webkit-transform: scale(1,1);
-  left: 50%;
-  top: 50%;
+
+#swipe-card {
+   position: absolute;
   width: 300px;
   height: 300px;
-  margin-left: -150px;
-  margin-top: -150px;
-  box-sizing: border-box;
-  background-color: rgb(255,255,255);
-  border-radius: 4px;
-  overflow: hidden;
-  -webkit-animation-fill-mode: forwards;
+  border: 1px solid #999;
+  box-shadow: 0px 5px 3px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  
+}
+.animate-enter {
+	-webkit-transition: bounceIn 0.4s ease-out !important; /* Chrome */
+	transition: 1s linear all;
+	opacity: 0;
 }
  
-swipe-card .title {
-  height: 40px;
-  padding: 5px;
-  line-height: 30px;
-  color: #444;
+.animate-enter.animate-enter-active {
+	opacity: 1;
 }
-swipe-card .image {
-  overflow: hidden;
-  max-height: 210px;
+
+.swipe-cards{
+    -webkit-animation: bounceIn 0.4s ease-out !important;
 }
-swipe-card .button {
-  border: none;
-}
-swipe-card .image img {
-  width: 100%;
-  border-radius: 0px 0px 4px 4px;
-}
- 
 #start-card {
+     position: absolute;
+     left: 50%;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  margin-left: -150px;
+  width: 300px;
+  height: 300px;
   color: #fff;
   background-color: #30BD8A;
   line-height: 300px;
   word-wrap: break-word;
   border: 6px solid #4CD68E;
   text-align: center;
+  
 }
-#start-card span {
-  display: inline-block;
-  line-height: 40px;
-  width: 200px;
-  font-size: 30px;
-  vertical-align: middle;
-}
+
  
 @-webkit-keyframes bounceIn {
   0% {
@@ -69,9 +56,9 @@ swipe-card .image img {
   }
 }
  
-swipe-card.pop-in-start {
+#swipe-card.pop-in-start {
   -webkit-transform: scale(0,0);
 }
-swipe-card.pop-in {
-  -webkit-animation: bounceIn 0.4s ease-out;
+.pop-in {
+  
 }
